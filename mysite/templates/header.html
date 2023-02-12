@@ -1,0 +1,60 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/static/CSS/index/Index.css" media="screen and (min-width:701px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/index/mobile.css" media="screen and (max-width: 700px)">
+
+    <link rel="stylesheet" type="text/css" href="/static/CSS/shop/shop.css" media="screen and (min-width:1101px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/shop/tab.css" media="screen and (min-width:840px) and (max-width:1100px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/shop/min-tab.css" media="screen and (min-width:701px) and (max-width:839px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/shop/mobile.css" media="screen and (max-width:700px)">
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="/static/CSS/register/register.css" media="screen and (min-width:1001px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/register/tab.css" media="screen and (min-width:701px) and (max-width:1000px)">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/register/mobile.css" media="screen and (max-width:700px)">
+    
+
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu hidden">
+            <a href="/" class="menuitem">{{home}}</a>
+            <a href="/shop" class="menuitem">{{type_1}}</a>
+            <a href="#" class="menuitem">{{type_2}}</a>
+            <a href="#" class="menuitem">{{about}}</a>
+            <a href="/register" class="menuitem">{{registration}}</a>
+            <a href="#" class="menuitem">{{login}}</a>
+            
+            
+        </div>
+        <div class="icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+       
+        </div>
+        <nav class="nav">
+
+            <div><a href="/" class="navItems">{{name}}</a></div>
+            
+            <div>
+                <a href="/shop" class="navItems">{{type_1}}</a>
+                <a href="#" class="navItems">{{type_2}}</a>
+                <a href="#" class="navItems">{{about}}</a>
+                <a href="/register" class="navItems">{{registration}}</a>
+                <a href="#" class="navItems">{{login}}</a>
+            </div>
+           
+        </nav>
+    </header>

@@ -1,0 +1,58 @@
+.grid-section
+{
+
+position:relative;
+height: 370rem;
+background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.8)); ;
+
+}
+
+.grid
+{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50% );
+    display:grid;
+    grid-template-rows: 35rem 35rem 35rem 35rem 35rem 35rem 35rem 35rem 35rem;
+    grid-template-columns: 25rem 25rem 25rem 25rem;
+    grid-gap:3rem;
+    transition: all 4s;
+
+
+}
+.grid-items
+{
+
+text-align: center;
+font-size: 1.7rem;
+border: 0.1rem solid black;
+background-color: white;
+cursor:pointer;
+
+}
+.grid-items:hover{
+
+    transform: scale(1.2)
+}
+
+.item-1
+{
+background-color:white
+
+}
+.tea-item
+{
+    margin-top: 1rem;
+    height: 19rem;
+    width:24rem;
+
+}
+.add-button
+{
+    margin-top:1rem;
+   width:12rem;
+   height:4rem; 
+
+
+}
