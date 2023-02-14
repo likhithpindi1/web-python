@@ -1,5 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render,redirect
+from service.models import service
+
 
 class commonData:
       data ={
@@ -22,8 +24,32 @@ class homepage(commonData):
                 r = commonData()
                 return render(request,"shop.html",r.data)
         def register(request):
-                r = commonData()
-                return render(request,"register.html",r.data)
+
+                
+                try:
+                       
+                       if request.method == 'POST':
+                                first_name = request.POST.get("first_name")
+                                last_name = request.POST.get("last_name")
+                                phone_number = request.POST.get("phone_number")
+                                email = request.POST.get("email")
+                                password = request.POST.get("password")
+                                re_password = request.POST.get("re-password")
+                except:
+                      pass
+              
+                
+
+                return render(request,'register.html')
+        def login(request):
+               r = commonData()
+               if request.method == 'POST':
+                        first_name = request.POST.get("first_name")
+                        return render(request,"login.html",r.data)
+               return render(request,"login.html",r.data)
+              
+               
+               
 
 
     

@@ -4,14 +4,15 @@
 <section class="register-section">
     
 
-        <form class="register-form" method="post">
+        <form action="{% url 'login' %}" method="post" class="register-form">
+            {% csrf_token %}
             <p class="register-head">Register</p>
-            <input type="text" valu="" class="register-input-1 common-input" name="first_name" placeholder="First Name" required><br>
-            <input type="text" valu="" class="register-input-2 common-input" name="last_name" placeholder="Last Name" required><br>
-            <input type="phone" valu="" class="register-input-3 common-input" name="last_name" placeholder="Phone" required><br>
-            <input type="email" valu="" class="register-input-4 common-input" name="email" placeholder="Email" required><br>
-            <input type="password" valu="" class="register-input-5 common-input" name="password" placeholder="Password" required><br>
-            <input type="password" valu="" class="register-input-6 common-input" name="re-password" placeholder="Re-Enter Password" required><br>
+            <input type="text" value="{{first_name}}" class="register-input-1 common-input" name="first_name" placeholder="First Name" required><br>
+            <input type="text" value="king" class="register-input-2 common-input" name="last_name" placeholder="Last Name" required><br>
+            <input type="phone" value="9999" class="register-input-3 common-input" name="phone_number" placeholder="Phone" required><br>
+            <input type="email" value="king@gmail.com" class="register-input-4 common-input" name="email" placeholder="Email" required><br>
+            <input type="password" value="123dsf" class="register-input-5 common-input" name="password" placeholder="Password" required><br>
+            <input type="password" value="dasd123" class="register-input-6 common-input" name="re_password" placeholder="Re-Enter Password" required><br>
             <button class="to-submit" type="submit">Register</button>
         </form>
 </section>
