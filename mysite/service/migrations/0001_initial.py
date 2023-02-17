@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('phone_number', models.IntegerField()),
                 ('Email_ID', models.EmailField(max_length=254)),
                 ('password', models.CharField(max_length=100)),
-                ('re_enter_password', models.CharField(max_length=100)),
+            
             ],
         ),
     ]

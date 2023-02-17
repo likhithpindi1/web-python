@@ -24,30 +24,37 @@ class homepage(commonData):
                 r = commonData()
                 return render(request,"shop.html",r.data)
         def register(request):
-
+                r= commonData()
                 
-                try:
+                
                        
-                       if request.method == 'POST':
-                                first_name = request.POST.get("first_name")
-                                last_name = request.POST.get("last_name")
+                if request.method == "POST":
+                                
+                                First_Name = request.POST.get("first_name")
+                                last_Name = request.POST.get("last_name")
                                 phone_number = request.POST.get("phone_number")
-                                email = request.POST.get("email")
+                                Email_ID = request.POST.get("email")
                                 password = request.POST.get("password")
-                                re_password = request.POST.get("re-password")
-                except:
-                      pass
-              
-                
+                                re_enter_password = request.POST.get("re-password")
+                                to_send = service(First_Name = First_Name,last_Name = last_Name, phone_number=phone_number, Email_ID =  Email_ID,password=password,re_enter_password=re_enter_password)
+                                to_send.save()
+                                
 
-                return render(request,'register.html')
+                return render(request,'register.html',r.data)
         def login(request):
                r = commonData()
                if request.method == 'POST':
-                        first_name = request.POST.get("first_name")
-                        return render(request,"login.html",r.data)
-               return render(request,"login.html",r.data)
-              
+                                First_Name = request.POST.get("first_name")
+                                last_Name = request.POST.get("last_name")
+                                phone_number = request.POST.get("phone_number")
+                                Email_ID = request.POST.get("email")
+                                password = request.POST.get("password")
+                                to_send = service(First_Name = First_Name,last_Name = last_Name, phone_number=phone_number, Email_ID =  Email_ID,password=password)
+                                to_send.save()
+               get_data = service.objects.all()
+
+
+               return render(request,"login.html",{'get_it' :get_data})
                
                
 

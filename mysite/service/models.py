@@ -6,8 +6,8 @@ class service(models.Model):
     phone_number = models.CharField(max_length=100)
     Email_ID = models.EmailField()
     password = models.CharField(max_length=100)
-    re_enter_password = models.CharField(max_length=100)
-
+    
+   
 
     
 
