@@ -1,0 +1,44 @@
+if i == Email_ID:
+messages.error(request, 'Email Id Already Exist')
+else:
+m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+m.save()
+transaction.on_commit(r.do_something)
+
+
+
+
+if Email_ID == Email_ID:
+messages.error(request, 'Email Id Already Exist')
+else:
+m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+m.save()    
+transaction.on_commit(r.do_something)  
+
+
+
+print(l[1])
+                        if l[0][0] == Email_ID:
+                                print("email id exist")
+                                messages.error(request, 'Email Id Already Exist')
+                                return redirect('register.html')
+                        else:
+                               pass
+
+
+
+
+                               l =[]
+                               print(name[0])
+                               for i in name:
+                                       l.append(i)
+                               print(l)
+                               for i in l:
+                                       if i == Email_ID:
+                                               print("email exist")
+                                               messages.error(request, 'Email Id Already Exist')
+                                       else:
+                                               m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                               m.save()    
+                                               transaction.on_commit(r.do_something)
+                                               break                               

@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
+<section class="register-section">
+    
 
-<h1>hi {{output}} {{ get_it }}</h1>
+    <form action="{% url 'user' %}" method="post" class="register-form">
+        {% csrf_token %}
+        <p class="register-head">Login</p>
+        <input type="email" value="king@gmail.com" class="register-input-4 common-input" name="email" placeholder="Email" required><br>
+        <input type="password" value="123dsf" class="register-input-5 common-input" name="password" placeholder="Password" required><br>
+        {% if massage in messages %}
+        <h1>{{ message }}</h1>
+        {% endif %}
+        <button class="to-submit" type="submit">Login</button>
+    </form>
+</section>
+
+
+
+
+   
+</p>
+ 
 {% endblock %}

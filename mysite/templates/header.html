@@ -28,12 +28,12 @@
 <body>
     <header class="header">
         <div class="menu hidden">
-            <a href="/" class="menuitem">{{home}}</a>
-            <a href="/shop" class="menuitem">{{type_1}}</a>
+            <a href="{% url 'home' %}" class="menuitem">{{home}}</a>
+            <a href="{% url 'shop' %}" class="menuitem">{{type_1}}</a>
             <a href="#" class="menuitem">{{type_2}}</a>
             <a href="#" class="menuitem">{{about}}</a>
-            <a href="/register" class="menuitem">{{registration}}</a>
-            <a href="/login" class="menuitem">{{login}}</a>
+            <a href="{% url 'register' %}" class="menuitem">{{registration}}</a>
+            <a href="{% url 'login' %}" class="menuitem">{{login}}</a>
             
             
         </div>
@@ -53,7 +53,7 @@
                 <a href="#" class="navItems">{{type_2}}</a>
                 <a href="#" class="navItems">{{about}}</a>
                 <a href="/register" class="navItems">{{registration}}</a>
-                <a href="/login" class="navItems">{{login}}</a>
+                <a href="{% url 'login' %}" class="navItems">{{login}}</a>
             </div>
            
         </nav>

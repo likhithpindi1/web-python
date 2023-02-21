@@ -6,6 +6,26 @@ height: 1738rem;
 background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.8)); ;
 
 }
+.search
+{
+position: absolute;
+top: 8rem;
+left:9rem;
+
+}
+.input-search
+{
+padding:1rem;
+margin-right: 3rem;
+
+    
+}
+.search-buttion
+{
+    padding:1rem;
+    width:11rem;
+
+}
 
 .grid
 {
