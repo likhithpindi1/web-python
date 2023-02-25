@@ -88,6 +88,7 @@ class homepage(commonData):
                                                         transaction.on_commit(r.do_something)
                                                         
                                                 break
+                                                
                         except:
                                 pass                
                        
