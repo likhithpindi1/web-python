@@ -12,9 +12,13 @@
             <input type="phone" value="9999" class="register-input-3 common-input" name="phone_number" placeholder="Phone" required><br>
             <input type="email" value="king@gmail.com" class="register-input-4 common-input" name="email" placeholder="Email" required><br>
             <input type="password" value="123dsf" class="register-input-5 common-input" name="password" placeholder="Password" required><br>
-            {% if massage in messages %}
-            <h1>{{ message }}</h1>
-            {% endif %}
+            {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
             <button class="to-submit" type="submit">Register</button>
         </form>
 </section>

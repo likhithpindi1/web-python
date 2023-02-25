@@ -8,6 +8,16 @@ from service.models import register
 from django.db import transaction
 from rest_framework.response import Response
 from rest_framework.decorators import api_view 
+import sendgrid 
+from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
+
+
+
 class commonData:
       data ={
         'title'   : 'Home Page',
@@ -38,35 +48,57 @@ class homepage(commonData):
         def login(request):
                r = commonData()
                if request.method == 'POST':
+                        
                         First_Name = request.POST.get("first_name")
                         last_Name = request.POST.get("last_name")
                         phone_number = request.POST.get("phone_number")
                         Email_ID = request.POST.get("email")
                         password = request.POST.get("password")
-                        name = register.objects.values_list('Email_ID',flat=True)
+                        
+                       
+                        user = None
+                        name = None
+                        print("0")
 
                         try:
-                                user = register.objects.get(Email_ID = Email_ID)
+
+                                user = register.objects.values_list('Email_ID',flat=True)
+                                
+                                print("1")
+                               
+                                if len(user) == 0 :
+                                        print("1.0")
+                                        m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                        print("1.2")
+                                        m.save()  
+                                        transaction.on_commit(r.do_something) 
+                                else:
+                                        print("3")
+                                        l = len(user)
+                                        for i in range(l):
+                                                print("2")
+                                                if user[i]== Email_ID:
+                                                        print("4")
+                                                        print("user is present ")
+                                                        return redirect("register")
+                                                else:
+                                                        print("5")
+                                                        m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                                        m.save()  
+                                                        transaction.on_commit(r.do_something)
+                                                        
+                                                break
                         except:
-                                messages.error(request,'email id is exist ')
-                        user = authenticate(request, Email_ID = Email_ID, password = password )
-                        if user is not None:
-                                login(request,user)
-                                return redirect('home')
-                        l =[]
-                        print(name[0])
-                        for i in name:
-                               l.append(i)
-                               print(l)
-                               for i in l:
-                                       if i == Email_ID:
-                                               print("email exist")
-                                               messages.error(request, 'Email Id Already Exist')
-                                       else:
-                                               transaction.on_commit(r.do_something)
-                                               break   
+                                pass                
+                       
+                        
+
+                                               
 
                return render(request,"login.html",r.data)
+        
+        
+        
         def user(request):
                 r= commonData()
                 return render(request,'user.html',r.data)
@@ -74,6 +106,25 @@ class homepage(commonData):
         @api_view()
         def api(request):
                 return Response({'status' : 200 , 'message':'this is my first api framework'})
+        
+
+        def email(request):
+                message = Mail(
+                from_email='likhithpindi@gmail.com',
+                to_emails='likhithpindi@gmail.com',
+                subject='Sending with Twilio SendGrid is Fun',
+                html_content='<strong>and easy to do anywhere, even with Python</strong>')
+                try:
+                        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+                        response = sg.send(message)
+                        print(response.status_code)
+                        print(response.body)
+                        print(response.headers)
+                        return render(request,'user.html',message)
+                except :
+                        pass
+                        return render(request,'user.html',message)
+                
                
                
 

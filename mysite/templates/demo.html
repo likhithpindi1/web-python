@@ -41,4 +41,34 @@ print(l[1])
                                                m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
                                                m.save()    
                                                transaction.on_commit(r.do_something)
-                                               break                               
+                                               break        
+                                               
+        
+
+
+
+                                               
+
+                                               user = None
+                                               name = None
+                       
+                                               try:
+                       
+                                                       user = register.objects.filter(Email_ID = Email_ID)
+                                               except:
+                                                       print("hi")
+                                                       import pdb
+                                                       pdb.set_trace()
+                                                       messages.add_message(request, messages.INFO, 'Hello world.')
+                                                       messages.error(request,'email id is exist')                       
+                                               if len(user) > 0:
+                       
+                                                       #login(request,user)
+                                                       return redirect('register')
+                                               #user = authenticate(request, Email_ID = Email_ID, password = password )
+                                               print("hlwww")
+                                               m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                               m.save()  
+                                               
+                                               transaction.on_commit(r.do_something)  
+                                               return render(request,"login.html",r.data)
