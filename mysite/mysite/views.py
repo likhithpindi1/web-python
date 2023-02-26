@@ -54,56 +54,51 @@ class homepage(commonData):
                         phone_number = request.POST.get("phone_number")
                         Email_ID = request.POST.get("email")
                         password = request.POST.get("password")
-                        
-                       
                         user = None
-                        name = None
-                        print("0")
-
                         try:
-
                                 user = register.objects.values_list('Email_ID',flat=True)
-                                
-                                print("1")
-                               
                                 if len(user) == 0 :
-                                        print("1.0")
                                         m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
-                                        print("1.2")
                                         m.save()  
                                         transaction.on_commit(r.do_something) 
                                 else:
-                                        print("3")
                                         l = len(user)
                                         for i in range(l):
-                                                print("2")
-                                                if user[i]== Email_ID:
-                                                        print("4")
-                                                        print("user is present ")
-                                                        return redirect("register")
-                                                else:
-                                                        print("5")
-                                                        m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
-                                                        m.save()  
-                                                        transaction.on_commit(r.do_something)
-                                                        
-                                                break
-                                                
+                                                for j in range(i+1):
+                                                        if user[i]== Email_ID:
+                                                                messages.error(request,"EMAIL ID ALREADY EXIST")
+                                                                return redirect('register')
+                                                        break
+                                        m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                        m.save()  
+                                        transaction.on_commit(r.do_something) 
+                                        return render(request,'login.html',r.data)
                         except:
-                                pass                
-                       
-                        
-
-                                               
-
-               return render(request,"login.html",r.data)
-        
-        
-        
+                                return render(request,'login.html',r.data)
+               return render(request,'login.html',r.data)
         def user(request):
                 r= commonData()
+                if request.method == "POST":
+                        print(0)
+                        login_email = request.POST.get('login_email')
+                        login_password = request.POST.get('login_password')
+                        register_email = request.POST.get('email')
+                        register_password = request.POST.get('password')
+                        user= register.objects.values_list('Email_ID','password')
+                        print(user)
+                        for  i,j in user:
+                                print(i)
+                                print(j)
+                                if i == login_email and j == login_password:
+                                        print(i)
+                                        print(j)
+                                        return render(request,'user.html',r.data)
+                        else:
+                                messages.error(request,"EMAIL ID OR PASSWORD IS INCORRECT")
+                                return redirect('login')
+                                       
+                                  
                 return render(request,'user.html',r.data)
-        
         @api_view()
         def api(request):
                 return Response({'status' : 200 , 'message':'this is my first api framework'})

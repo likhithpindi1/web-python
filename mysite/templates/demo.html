@@ -64,7 +64,8 @@ print(l[1])
                                                if len(user) > 0:
                        
                                                        #login(request,user)
-                                                       return redirect('register')
+                                                       
+                                                       
                                                #user = authenticate(request, Email_ID = Email_ID, password = password )
                                                print("hlwww")
                                                m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
@@ -72,3 +73,50 @@ print(l[1])
                                                
                                                transaction.on_commit(r.do_something)  
                                                return render(request,"login.html",r.data)
+
+
+
+
+
+
+                                               for i in range(l):
+                                               print("i1=",i)
+                                               print("2")
+                                               if user[i]== Email_ID:
+                                                       print(user[i])
+                                                       print("4")
+                                                       print("i2 =",i)
+                                                       print("user is present ")
+                                                       messages.error(request,"EMAIL ID ALREADY EXIST ")
+                                                       return redirect("register")
+                                               else:
+                                                       print("5")
+                                                       m = register(First_Name = First_Name,last_Name = last_Name, phone_number = phone_number ,Email_ID = Email_ID, password = password)
+                                                       m.save()  
+                                                       transaction.on_commit(r.do_something)
+                                                       
+                                               break
+
+
+                                               
+
+
+                                               for j in password:
+                                               print(3)
+                                               if i == login_password:
+                                                       print(3)
+                                                       return render(request,'user.html',r.data)
+                                               else:
+                                                       return redirect("login")
+
+
+                                                       if i == login_email:
+                                        print(2)
+                                        password = register.objects.values_list('password',flat=True)
+                                        for j in password:
+                                                print(3)
+                                                if j == login_password:
+                                                        print(3)
+                                                        return render(request,'user.html',r.data)
+                                else:
+                                        return redirect("login")

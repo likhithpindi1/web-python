@@ -34,6 +34,14 @@ font-weight: 2rem;
     width: 23rem;
 
 }
+.error
+{
+    color:red;
+    margin-bottom: 2rem;
+    
+
+
+}
 .to-submit
 {
 
