@@ -25,7 +25,7 @@ urlpatterns = [
     path('login/', views.homepage.login,name='login'),
     path('user/',views.homepage.user,name='user'),
     path('api/',views.homepage.api),
-    path('email/',views.homepage.email)
+    
 ]
 
 
