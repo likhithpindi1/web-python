@@ -20,9 +20,9 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 def send_email():
-        api_key = '8f8712eb95d7b138982dfe924b04b6b4' #os.environ['mailjet_api_key']
+        api_key = '' #os.environ['mailjet_api_key']
 
-        api_secret = 'dca61de169c6db0981806ac9898a91c1' #os.environ['mailjet_api_secret']
+        api_secret = '' #os.environ['mailjet_api_secret']
         mailjet = Client(auth=(api_key, api_secret), version='v3.1')
         
         data = {
