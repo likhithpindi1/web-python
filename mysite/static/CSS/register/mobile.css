@@ -45,12 +45,12 @@ font-weight: 2rem;
 .to-submit
 {
 
-    padding:2rem;
+    padding:1.2rem;
     border-radius: 3rem;
-    width:16rem;
+    width:7rem;
     background-color: green;
     border: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     
 }
 .to-submit:hover{
@@ -58,4 +58,26 @@ font-weight: 2rem;
     cursor:pointer;
     background-color: white;
     border: 0.1rem solid black;
+}
+.fb_link
+{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 1.4rem;
+    padding:1.2rem;
+    background-color: green;
+    font-size: 1rem;
+    color: black;
+    border-radius: 4rem;
+    
+    margin-top: 3rem;
+}
+.fb_link:hover{
+
+    cursor:pointer;
+    background-color: white;
+    border: 0.1rem solid black;
+    
+    
+    
 }

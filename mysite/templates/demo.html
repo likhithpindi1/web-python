@@ -120,3 +120,17 @@ print(l[1])
                                                         return render(request,'user.html',r.data)
                                 else:
                                         return redirect("login")
+
+
+
+
+                                        for j in i:
+                                        print(i)
+                                        if i == login_email:
+                                                for j in password:
+                                                        if j == login_password :
+                                                                return render(request,'user.html',r.data)
+                                        else:
+                                                return redirect("login")
+
+                                        break

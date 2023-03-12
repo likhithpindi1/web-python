@@ -71,8 +71,76 @@ background-color:white
 .add-button
 {
     margin-top:1rem;
-   width:12rem;
-   height:4rem; 
+   
+   padding:1rem;
+   cursor:pointer;
 
 
+}
+body header .hidden
+{
+
+visibility: hidden;
+
+}
+.onclick_button
+{   
+    display: flex;
+    flex-direction: column;
+    height: 24rem;
+    position:absolute;
+    top:2rem;
+    left:52rem;
+    background-color: white;
+    width:60rem; ;
+    z-index: 2;
+    
+
+
+}
+.content_in_basket
+{
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 0.1rem black;
+
+
+
+}
+.head_of_content
+{
+    
+    margin-left:2rem;
+    color:blue
+
+}
+.to_close_basket
+{   
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+  
+    cursor: pointer;
+
+
+}
+.back_black
+{
+    
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color:rgba(0,0,0,0.8);
+    z-index: 1;
+    
+}
+.to_hide
+{
+
+    visibility: hidden;
 }

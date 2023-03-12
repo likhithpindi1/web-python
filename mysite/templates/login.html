@@ -13,8 +13,15 @@
         <h1 class="error">{{ message }}</h1>
         {% endfor %}
         {% endif %}
+        
         <button class="to-submit" type="submit">Login</button>
+        <div class="to_link">
+            <a href="{% url 'social:begin' 'facebook' %}" class="fb_link">Login with FB</a>
+            <a href="{% url 'social:begin' 'Twitter' %}" class="fb_link">Login with Twitter</a>
+        </div>
+
     </form>
+    
 </section>
 
 

@@ -65,11 +65,12 @@ body header .icon
 {
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height:100%;
     width:5rem;
     border:1px solid white;
     justify-content: center;
+    text-align: center;
     cursor: pointer;
     background-color: white;
     
@@ -79,7 +80,7 @@ body header .icon
 }
 body header .icon:hover
 {
-    background-color: blueviolet;
+   background-color: blueviolet;
 }
 body header .icon .line
 {       
@@ -91,6 +92,7 @@ body header .icon .line
 
 
 }
+
 
 
 
@@ -115,6 +117,7 @@ body header .nav .navItems{
     text-decoration: none;
 }
 body  main .main-section{
+    position: relative;
     width:100%;
     background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(https://lh3.googleusercontent.com/p/AF1QipNbfsAXC1QC6ufXdi0azr7Q7ya7yt3ui9-HkhZj=s1360-w1360-h1020);
     height: 86.8rem;
@@ -123,7 +126,39 @@ body  main .main-section{
     background-repeat: no-repeat;
     background-size: cover ;
 }
+.welcome-page
+{
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color:white;
+    
 
+}
+.welcome-head
+{
+    background-color: black;
+}
+.to_shop_here
+{
+ display: inline-block;
+ text-decoration: none;
+ padding:2rem;
+ background-color: black;
+ color:white;
+ margin-top: 3rem;
+border-radius: 2rem;
+}
+
+.to_shop_here:hover{
+
+    color:black;
+    background-color:white;
+
+}
 body .footer
 {
    height: 10rem;

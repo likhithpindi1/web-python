@@ -2,7 +2,7 @@
 {
 
 position:relative;
-height: 1738rem;
+height: 1400rem;
 background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.8)); ;
 
 }
@@ -41,8 +41,7 @@ margin-right: 3rem;
                         35rem 35rem 35rem 35rem 35rem
                         35rem 35rem 35rem 35rem 35rem
                         35rem 35rem 35rem 35rem 35rem
-                        35rem 35rem 35rem 35rem 35rem
-                        35rem 35rem 35rem 35rem 35rem;
+                        35rem ;
     grid-template-columns: 25rem;
     grid-gap:3rem;
     transition: all 4s;
@@ -79,8 +78,15 @@ background-color:white
 .add-button
 {
     margin-top:1rem;
-   width:12rem;
-   height:4rem; 
+   
+   padding:1rem;
+   cursor:pointer;
 
+
+}
+body header .hidden
+{
+
+visibility: hidden;
 
 }

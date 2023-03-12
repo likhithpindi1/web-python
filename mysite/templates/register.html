@@ -14,10 +14,9 @@
             <input type="password" value="" class="register-input-5 common-input" name="password" placeholder="Password" required><br>
             {% if messages %}
             {% for message in messages %}
-    <h1 class="error">{{ message }}</h1>
-    {% endfor %}
-</ul>
-{% endif %}
+            <h1 class="error">{{ message }}</h1>
+            {% endfor %}
+            {% endif %}
             <button class="to-submit" type="submit">Register</button>
         </form>
 </section>
